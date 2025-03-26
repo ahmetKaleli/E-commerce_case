@@ -76,12 +76,7 @@ li:hover{
 .logo img {
     width: 100%;
     height: 150px;
-}
-
-.search{
-    height: 30px;
-    border-radius: 5%;
-    border: none;
+    margin-left: 20px;
 }
 
 .footer{
@@ -93,6 +88,94 @@ li:hover{
     flex-direction: column;
     color: white;
     padding: 2rem;
+}
+
+.loginPage{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    display: none;
+    transform: translate(-50%, -50%);
+}
+
+.top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close{
+    cursor: pointer;
+    font-size: 20px;
+    text-align: center;
+    border: 1px solid red;
+    background-color: red;
+    width: 30px;
+    color: white;
+}
+
+.close:hover{
+    background-color: rgb(165, 9, 9);
+    border: none;
+}
+
+.blur{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    display: none;
+}
+
+#loginPageBtn{
+    padding: 10px;
+    width: 100px;
+    font-size: 20px;
+    background-color: #0095da;
+    border: none;
+    color: white;
+    border-radius: 40px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.bottom{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.bottom input{
+    width: 250px;
+    padding: 5px;
+    border: none;
+    border-bottom:1px solid gray ;
+    margin-bottom: 10px;
+}
+
+.loginBtn{
+    padding: 5px;
+    width: 100px;
+    font-size: 20px;
+    background-color: #0095da;
+    border: none;
+    color: white;
+    border-radius: 40px;
+    margin-right: 20px;
+    cursor: pointer;
+    float: right;
+}
+
+.loginBtn:hover{
+    background-color: #165783;
 }
 
 @media (max-width:768px) {
