@@ -12,8 +12,7 @@ async function getProducts() {
                 "Content-type": "application/json charset-UTF8"
             }
         })
-        // .then((res) => res.json())
-        // .then((res) => console.log(res.data))
+
 
         const data = await res.json()
         const pr = data.data
@@ -30,13 +29,28 @@ async function getProducts() {
             const createElement = document.createElement("div")
             createElement.classList.add("product")
             createElement.innerHTML = `
+                <img src=${product.productData.productMainImage}/>
                 <h3>${product.productName}</h3>
                 <p><strong>Price:</strong> ${product.salePrice} TL</p>
-                <img src=${product.productData.productMainImage}/>
-                <button>Detail</button>
+               
+              <button class="detailBtn" data-id="${product.productID}">Detail</button>
             `
             productsList.appendChild(createElement)
         })
+        document.querySelectorAll(".detailBtn").forEach((btn) => {
+            btn.addEventListener("click", (e) => {
+                const prId = e.target.dataset.id
+
+
+                const selectedProduct = products.find(p => String(p.productID) === String(prId))
+     
+
+                localStorage.setItem("selectedProduct", JSON.stringify(selectedProduct))
+                window.location.href = "detail.html"
+
+            })
+        })
+
 
 
     } catch (error) {
